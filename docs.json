@@ -33,7 +33,7 @@
       "anchors": [
         {
           "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
+          "href": "https://docs.sanlinhtike.com",
           "icon": "book-open-cover"
         },
         {
@@ -80,9 +80,8 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/zoe_dev_",
+      "github": "https://github.com/sanlinhtik3"
     }
   }
 }
