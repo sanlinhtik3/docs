@@ -31,13 +31,13 @@
           {
             "group": "Blockchain",
             "pages": [
-              "what-is"
+              "blockchain/what-is"
             ]
           },
           {
             "group": "Knowledge",
             "pages": [
-              "6th-years-dca-is-gone"
+              "knowledge/6th-years-dca-is-gone"
             ]
           },
           {
