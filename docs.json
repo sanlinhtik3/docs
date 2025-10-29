@@ -40,6 +40,11 @@
           "anchor": "Blog",
           "href": "https://mintlify.com/blog",
           "icon": "newspaper"
+        },
+        {
+          "anchor": "YouTube",
+          "href": "https://www.youtube.com/@SanLinHtike",
+          "icon": "youtube"
         }
       ]
     }
