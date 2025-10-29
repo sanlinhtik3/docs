@@ -29,6 +29,18 @@
             ]
           },
           {
+            "group": "Blockchain",
+            "pages": [
+              "what-is"
+            ]
+          },
+          {
+            "group": "Knowledge",
+            "pages": [
+              "6th-years-dca-is-gone"
+            ]
+          },
+          {
             "group": "Writing content",
             "pages": [
               "essentials/markdown",
