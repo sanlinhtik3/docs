@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "aspen",
   "name": "ZOE Crypto Docs",
   "colors": {
-    "primary": "#fcd535",
+    "primary": "#07c983",
     "light": "#07C983",
-    "dark": "#fcd535"
+    "dark": "#07C983"
   },
   "favicon": "/favicon.svg",
   "navigation": {
