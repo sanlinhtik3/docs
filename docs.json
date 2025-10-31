@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "aspen",
+  "theme": "almond",
   "name": "ZOE Crypto Docs",
   "colors": {
     "primary": "#07c983",
