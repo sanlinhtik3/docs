@@ -39,9 +39,14 @@
           "icon": "book-open-cover"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Facebook",
+          "href": "https://facebook.com/realzoedevcrypto",
+          "icon": "facebook"
+        },
+        {
+          "anchor": "Telegram",
+          "href": "https://t.me/zoecryptofree",
+          "icon": "telegram"
         },
         {
           "anchor": "YouTube",
