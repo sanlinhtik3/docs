@@ -17,9 +17,15 @@
             "group": "Blockchain",
             "pages": [
               "blockchain/what-is",
-              "blockchain/buy-the-dip",
-              "blockchain/dca",
               "blockchain/5-mistakes-to-avoid"
+            ]
+          },
+          {
+            "group": "Investment",
+            "pages": [
+              "investment/dca",
+              "investment/buy-the-dip",
+              "investment/dca-vs-buying-the-dip"
             ]
           },
           {
