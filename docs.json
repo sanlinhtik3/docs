@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "almond",
-  "name": "ZOE Crypto Burmese Docs ",
+  "name": "ZOE Crypto & AI Burmese Docs",
   "colors": {
     "primary": "#07c983",
     "light": "#07C983",
@@ -11,27 +11,118 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Start Here",
         "groups": [
           {
-            "group": "Blockchain",
+            "group": "လမ်းညွှန်",
             "pages": [
-              "blockchain/what-is",
-              "blockchain/5-mistakes-to-avoid"
+              "index",
+              "start-here/how-to-learn",
+              "start-here/risk-disclaimer"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Crypto",
+        "groups": [
+          {
+            "group": "Foundations",
+            "pages": [
+              "crypto-foundations/what-is-crypto",
+              "crypto-foundations/blockchain-basics",
+              "crypto-foundations/stablecoins",
+              "crypto-foundations/exchange-wallet-network"
             ]
           },
           {
-            "group": "Investment",
+            "group": "Crypto ကို Bank လိုသုံးမယ်",
+            "pages": [
+              "crypto-bank/wallet-safety",
+              "crypto-bank/exchange-security",
+              "crypto-bank/deposit-withdraw-test",
+              "crypto-bank/daily-checklist"
+            ]
+          },
+          {
+            "group": "Investment Basics",
             "pages": [
               "investment/dca",
               "investment/buy-the-dip",
-              "investment/dca-vs-buying-the-dip"
+              "investment/dca-vs-buying-the-dip",
+              "blockchain/5-mistakes-to-avoid",
+              "knowledge/6th-years-dca-is-gone"
             ]
           },
           {
-            "group": "Knowledge",
+            "group": "Research & DYOR",
             "pages": [
-              "knowledge/6th-years-dca-is-gone"
+              "research/how-to-research-a-coin",
+              "blockchain/what-is",
+              "research/red-flags-checklist"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Myanmar Context",
+        "groups": [
+          {
+            "group": "Local Safety",
+            "pages": [
+              "myanmar/p2p-scam-safety",
+              "myanmar/mobile-first-security",
+              "myanmar/social-media-scams"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "AI",
+        "groups": [
+          {
+            "group": "Foundations",
+            "pages": [
+              "ai-foundations/what-is-ai",
+              "ai-foundations/llm-basics",
+              "ai-foundations/prompting-basics",
+              "ai-foundations/ai-safety"
+            ]
+          },
+          {
+            "group": "Practical AI",
+            "pages": [
+              "ai-practical/learning-with-ai",
+              "ai-practical/research-with-ai",
+              "ai-practical/coding-with-ai",
+              "ai-practical/ai-workflows",
+              "ai-practical/runpod-gpu-codex-ssh"
+            ]
+          },
+          {
+            "group": "Agentic Era Operating Manual",
+            "pages": [
+              "ai-agentic-era/operating-manual",
+              "ai-agentic-era/agent-mindset",
+              "ai-agentic-era/daily-life-agents",
+              "ai-agentic-era/vibe-coding-operator",
+              "ai-agentic-era/content-creator-operator",
+              "ai-agentic-era/research-agent",
+              "ai-agentic-era/prompt-library",
+              "ai-agentic-era/quality-gates"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Reference",
+        "groups": [
+          {
+            "group": "Glossary & Editorial",
+            "pages": [
+              "reference/crypto-glossary",
+              "reference/ai-glossary",
+              "editorial/writing-style-guide"
             ]
           }
         ]
@@ -81,15 +172,15 @@
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {

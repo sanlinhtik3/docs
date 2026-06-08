@@ -1,0 +1,109 @@
+---
+title: "AI Agentic Era Operating Manual"
+description: "Prompt ကို magic sentence မဟုတ်ဘဲ အလုပ်ပြီးမြောက်စေတဲ့ operating system အဖြစ်သုံးနည်း။"
+---
+
+ဒီ section က prompt bank မဟုတ်ပါ။ **Prompt သုံးပြီး အလုပ်ပြီးအောင်လုပ်တဲ့ Operating Manual** ပါ။
+
+Agentic Era မှာ prompt က “မေးခွန်း” မဟုတ်တော့ဘူး။ Prompt က AI ကို role, goal, context, tools, quality gate, handoff, review loop ပေးတဲ့ **work contract** ဖြစ်လာပါတယ်။
+
+## TL;DR
+
+- Agent က chat bot ထက်ပိုပြီး **plan → use tools → produce output → get reviewed** လုပ်နိုင်တဲ့ workflow ပါ။
+- Prompt က one-shot command မဟုတ်ဘဲ **operating instructions** ဖြစ်ရမယ်။
+- Human က final owner ပါ။ AI က draft, research, code, plan, review ကိုကူညီတယ်။
+- High-value prompt တိုင်းမှာ `Goal`, `Inputs`, `Constraints`, `Output format`, `Quality checks` ပါရမယ်။
+- Risky action တွေမှာ human approval gate ထည့်ရမယ်။
+
+<Info>
+Real-time research note: OpenAI Agents docs က agents ကို planning, tools, specialist collaboration, state ပါတဲ့ multi-step applications အဖြစ်ဖော်ပြထားပြီး guardrails/human review ကို advanced workflow အတွက်သုံးဖို့ညွှန်ပြထားပါတယ်။ Anthropic Claude docs က tool use ကို agentic loop ရဲ့ core primitive အဖြစ်ဖော်ပြထားပြီး tool trigger behavior ကို prompt နဲ့ steer လုပ်နိုင်ကြောင်းပြောထားပါတယ်။
+</Info>
+
+## Agentic OS Loop
+
+အလုပ်တစ်ခုကို AI နဲ့ပြီးအောင်လုပ်ချင်ရင် ဒီ loop ကိုသုံးပါ။
+
+<Steps>
+  <Step title="Define">
+    အလုပ်ရဲ့ goal, audience, success criteria ကိုသတ်မှတ်ပါ။
+  </Step>
+  <Step title="Delegate">
+    AI ကို role, context, inputs, constraints ပေးပြီး task ခွဲခိုင်းပါ။
+  </Step>
+  <Step title="Operate">
+    AI က draft, research, code, outline, checklist, review စတာတွေလုပ်ပါစေ။
+  </Step>
+  <Step title="Verify">
+    Output ကို facts, safety, tone, usefulness, completeness နဲ့စစ်ပါ။
+  </Step>
+  <Step title="Ship">
+    Human က final edit/approval လုပ်ပြီး publish/deploy/send လုပ်ပါ။
+  </Step>
+</Steps>
+
+## Master Operating Prompt
+
+ဒီ prompt ကို daily work, coding, content, research အတွက် base template အဖြစ်သုံးပါ။
+
+```text
+You are my AI operator for this task.
+
+Goal:
+[လုပ်ချင်တဲ့အလုပ်ကို တစ်ကြောင်းတည်းရေးပါ]
+
+Context:
+[Audience, background, brand voice, existing draft, constraints]
+
+Inputs:
+[Links, notes, files, examples, rough idea]
+
+Operating mode:
+1. First, clarify the task in your own words.
+2. Break the work into steps.
+3. Tell me what information is missing.
+4. Produce the first usable output.
+5. Run a quality check against the criteria below.
+6. Give me a concise next-action list.
+
+Output format:
+[Markdown / table / checklist / code / script / content calendar]
+
+Quality criteria:
+- Accurate and source-aware
+- Practical, not theoretical
+- Concise but complete
+- Beginner-friendly
+- Safe: no private data, no fake claims, no risky action without approval
+
+Do not:
+- Invent facts
+- Overpromise results
+- Skip risks
+- Give vague advice
+```
+
+## When To Use This
+
+Use this when:
+
+- You want AI to finish a real task, not just answer a question.
+- You need a repeatable workflow.
+- You want output that can be reviewed and shipped.
+
+Don’t use this when:
+
+- You only need a quick definition.
+- The task requires private data you should not paste into AI.
+- The task is legal/medical/financial final advice.
+
+## Source Notes
+
+- [OpenAI Prompt Engineering](https://developers.openai.com/api/docs/guides/prompt-engineering)
+- [OpenAI Agents SDK](https://developers.openai.com/api/docs/guides/agents)
+- [OpenAI Agents Guardrails](https://openai.github.io/openai-agents-python/guardrails/)
+- [Claude Tool Use](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview)
+- [Cursor Rules](https://cursor.com/docs)
+
+<Check>
+နောက်တစ်ဆင့်မှာ [Agent Mindset](/ai-agentic-era/agent-mindset) ကိုဖတ်ပြီး AI ကို ဘယ်လို delegate လုပ်ရမလဲလေ့လာပါ။
+</Check>

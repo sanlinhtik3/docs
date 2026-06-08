@@ -1,0 +1,90 @@
+---
+title: "Quality Gates"
+description: "AI agent output ကို publish, ship, send မလုပ်ခင် စစ်ရမယ့် quality gates."
+---
+
+AI နဲ့လုပ်တဲ့အလုပ်မှာ speed ရလာတာကောင်းပါတယ်။ ဒါပေမယ့် speed များပြီး quality gate မရှိရင် မှားတာကိုမြန်မြန်ပဲ publish လုပ်မိနိုင်ပါတယ်။
+
+## TL;DR
+
+- AI output တိုင်းကို final မယူပါနဲ့။
+- Risky output မှာ human approval gate ထည့်ပါ။
+- Content, code, research အတွက် quality gate မတူပါ။
+- “Looks good” မဟုတ်ဘဲ checklist နဲ့စစ်ပါ။
+
+## Universal Quality Gate
+
+```text
+Run a quality gate on this output.
+
+Check:
+1. Accuracy: Are there unsupported claims?
+2. Completeness: Is anything important missing?
+3. Clarity: Can a beginner use it?
+4. Practicality: Is there a next action?
+5. Safety: Any privacy, security, legal, financial, or reputational risk?
+6. Tone: Does it match the requested voice?
+7. Concision: Can it be shorter without losing value?
+
+Return:
+- Pass / Needs revision
+- Critical issues
+- Suggested fixes
+- Revised version
+```
+
+## Content Gate
+
+Use before publishing posts/scripts.
+
+- Hook clear လား
+- Audience pain point ကိုထိလား
+- Claim တွေ fact-check လုပ်ထားလား
+- Hype မများလား
+- CTA natural ဖြစ်လား
+- Platform format နဲ့ကိုက်လား
+- Creator voice မပျောက်ဘူးလား
+
+## Coding Gate
+
+Use before shipping code.
+
+- Scope ထက်မကျော်ဘူးလား
+- Existing pattern နဲ့ကိုက်လား
+- Tests/build pass ဖြစ်လား
+- Secret/API key leak မရှိလား
+- Error state တွေ handle လုပ်ထားလား
+- Mobile/UX broken မဖြစ်လား
+- Security risk ရှိလား
+
+## Research Gate
+
+Use before trusting AI research.
+
+- Source ပါလား
+- Date-sensitive fact တွေ current ဖြစ်လား
+- Fact နဲ့ interpretation ခွဲထားလား
+- Missing info ဖော်ပြထားလား
+- Opposing evidence စစ်ထားလား
+- Decision risk ဖော်ပြထားလား
+
+## Human Approval Gate
+
+AI ကအောက်က action တွေကို final မလုပ်သင့်ပါ။
+
+- Money transfer
+- Crypto transaction
+- Public post
+- Email/message to real person
+- Account/security setting change
+- Database migration
+- Production deploy
+- Legal/medical/financial advice
+
+<Warning>
+AI output က polished ဖြစ်နေတာနဲ့ safe ဖြစ်တယ်လို့မဆိုလိုပါ။ Polished wrong answer က raw wrong answer ထက်ပိုအန္တရာယ်ရှိနိုင်ပါတယ်။
+</Warning>
+
+<Check>
+ဒီ gate တွေကို reusable checklist အဖြစ်သုံးပြီး AI နဲ့လုပ်တဲ့အလုပ်တိုင်းမှာ final review လုပ်ပါ။
+</Check>

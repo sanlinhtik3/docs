@@ -1,0 +1,84 @@
+---
+title: "Agent Mindset"
+description: "AI ကို answer machine မဟုတ်ဘဲ junior operator တစ်ယောက်လို delegate လုပ်နည်း။"
+---
+
+Agentic AI ကိုကောင်းကောင်းသုံးချင်ရင် mindset ပြောင်းရပါမယ်။ “ဒီဟာရေးပေး” ဆိုတာထက် “ဒီအလုပ်ကို ဒီ standard နဲ့ပြီးအောင်လုပ်” ဆိုပြီး delegate လုပ်ရပါမယ်။
+
+## TL;DR
+
+- AI ကို role မပေးရင် generic output ရတတ်ပါတယ်။
+- Context မပေးရင် AI ကခန့်မှန်းတတ်ပါတယ်။
+- Quality gate မပေးရင် output ကချောပေမယ့်အသုံးမဝင်နိုင်ပါ။
+- Human-in-the-loop မထားရင် risky action တွေမှာဆုံးရှုံးနိုင်ပါတယ်။
+
+## Delegation Formula
+
+```text
+Role + Mission + Context + Inputs + Constraints + Output + Quality Gate + Approval Rule
+```
+
+ဒီ formula က prompt ကို instruction မဟုတ်ဘဲ work contract ဖြစ်စေပါတယ်။
+
+## Copy-Paste Delegation Prompt
+
+```text
+Act as my [role] for this task.
+
+Mission:
+[အလုပ်ပြီးရမယ့် result]
+
+Context:
+[Audience, tone, background, existing notes]
+
+Inputs:
+[Raw notes / draft / links / examples]
+
+Constraints:
+[Length, language, tools, things to avoid]
+
+Output:
+[Exact format]
+
+Quality gate:
+Before final answer, check:
+1. Is it accurate?
+2. Is it concise?
+3. Is it usable today?
+4. Are risks and assumptions stated?
+5. Is private/sensitive data removed?
+
+Approval rule:
+If the next step is risky, irreversible, public, financial, or uses private data, stop and ask for confirmation.
+```
+
+## Agent Role Examples
+
+- **Research operator**: source-backed summary, comparison, risk list
+- **Writing operator**: outline, draft, hook, rewrite, repurpose
+- **Coding operator**: spec, implementation plan, code review, test plan
+- **Review operator**: quality gate, gaps, contradictions, safety
+- **Planning operator**: daily plan, priority, next actions
+
+## Good Agent Instruction
+
+```text
+You are my content operations assistant.
+Your job is to turn a rough idea into a publish-ready Facebook post.
+Keep my tone: friendly Burmese + English tech terms mix.
+First ask for missing context if needed.
+Then create: hook, post body, CTA, risk note, and 3 alternative titles.
+Before final output, check clarity, usefulness, and hype level.
+```
+
+## Bad Agent Instruction
+
+```text
+Write viral content about AI.
+```
+
+ဘာကြောင့်မကောင်းလဲ: audience မရှိ, tone မရှိ, format မရှိ, quality gate မရှိ, risk boundary မရှိ။
+
+<Tip>
+AI ကို “တော်အောင်” မခိုင်းပါနဲ့။ “ဘယ်လိုအလုပ်လုပ်ရမလဲ” ကို ပြောပေးပါ။
+</Tip>

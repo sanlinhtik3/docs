@@ -1,0 +1,121 @@
+---
+title: "Vibe Coding Operator"
+description: "Idea ကနေ working app အထိ AI coding agent နဲ့ spec, build, debug, review, ship လုပ်နည်း။"
+---
+
+Vibe coding ဆိုတာ “စိတ်ကူးကို AI နဲ့ code ဖြစ်အောင်တွန်းသွားတာ” ပါ။ ဒါပေမယ့် အလုပ်ဖြစ်ဖို့ vibe တစ်ခုတည်းမလုံလောက်ပါ။ Spec, scope, review, test, safety gate လိုပါတယ်။
+
+## TL;DR
+
+- AI ကို “app ဆောက်ပေး” လို့မခိုင်းခင် `spec` ရေးခိုင်းပါ။
+- Small feature တစ်ခုချင်းစီ build လုပ်ပါ။
+- AI code ကို run/test/review မလုပ်ဘဲမယုံပါနဲ့။
+- Secret keys, payment, auth, database migration တွေမှာ approval gate ထည့်ပါ။
+
+## Vibe Coding Loop
+
+<Steps>
+  <Step title="Idea to Spec">
+    Rough idea ကို feature list, user flow, data model, constraints အဖြစ်ပြောင်းပါ။
+  </Step>
+  <Step title="Spec to Plan">
+    AI ကို files, components, API routes, test plan ခွဲခိုင်းပါ။
+  </Step>
+  <Step title="Plan to Patch">
+    Small patch တစ်ခုချင်းစီ implement လုပ်ခိုင်းပါ။
+  </Step>
+  <Step title="Patch to Review">
+    AI ကို code review, edge cases, broken UX, security risk စစ်ခိုင်းပါ။
+  </Step>
+  <Step title="Review to Ship">
+    Build/test pass ဖြစ်မှ deploy/publish လုပ်ပါ။
+  </Step>
+</Steps>
+
+## Master Vibe Coding Prompt
+
+```text
+You are my senior product-engineering operator.
+
+Goal:
+Build [feature/app] for [target user].
+
+Current state:
+[repo/framework/current files if any]
+
+Constraints:
+- Keep scope small
+- Follow existing patterns
+- Do not rewrite unrelated files
+- Do not add new dependencies unless necessary
+- Explain risky changes before doing them
+
+Operating mode:
+1. First write a short product spec.
+2. Ask for missing decisions.
+3. Propose an implementation plan.
+4. Break work into small steps.
+5. After each step, provide verification instructions.
+6. Before final, run a quality review.
+
+Output:
+- Spec
+- File plan
+- Implementation steps
+- Test plan
+- Risks
+```
+
+## Bug Fix Prompt
+
+```text
+Act as my debugging operator.
+
+Problem:
+[error / behavior]
+
+Context:
+[framework, files, steps to reproduce]
+
+Your task:
+1. Identify likely root causes.
+2. Tell me the smallest safe fix.
+3. Avoid unrelated refactors.
+4. Provide a verification step.
+5. If logs are needed, tell me exactly what command to run.
+```
+
+## Code Review Prompt
+
+```text
+Review this change like a cautious senior engineer.
+
+Focus on:
+- Bugs
+- Security risks
+- Broken UX
+- Missing tests
+- Performance issues
+- Unnecessary complexity
+
+Return:
+1. Findings ordered by severity
+2. File/line references if available
+3. Suggested fix
+4. Tests to run
+```
+
+## Quality Check
+
+Before shipping:
+
+- App starts without errors
+- Main workflow works
+- Mobile layout is usable
+- No secret keys committed
+- No destructive commands were run blindly
+- Tests/build pass or failure is documented
+
+<Warning>
+AI coding agent က command run လုပ်နိုင်တဲ့ environment ရရင် destructive action ဖြစ်နိုင်ပါတယ်။ `rm`, `reset`, production deploy, database migration, payment setup တွေမှာ human approval မရှိဘဲမလုပ်ပါနဲ့။
+</Warning>

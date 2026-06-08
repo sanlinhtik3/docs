@@ -1,0 +1,111 @@
+---
+title: "Daily Life Agents"
+description: "နေ့စဉ်အလုပ်တွေကို AI agent workflow နဲ့ planning, writing, learning, admin task အဖြစ်လွယ်ကူအောင်လုပ်နည်း။"
+---
+
+Daily Life Agent ဆိုတာ ကိုယ့်နေ့စဉ်အလုပ်တွေကို plan လုပ်ပေး၊ draft ရေးပေး၊ decision support ပေး၊ checklist စစ်ပေးတဲ့ AI workflow ပါ။
+
+## TL;DR
+
+- Personal assistant လိုသုံးပါ၊ autopilot မလုပ်ပါနဲ့။
+- Calendar, money, private info တွေကို AI ထဲမထည့်ခင် privacy စဉ်းစားပါ။
+- Output တိုင်းကို human review လုပ်ပါ။
+- Reusable daily prompts သုံးရင် time save ဖြစ်ပါတယ်။
+
+## Morning Operator
+
+နေ့စဉ်အစမှာ priority ရှင်းဖို့သုံးပါ။
+
+```text
+Act as my daily planning operator.
+
+Today’s raw tasks:
+[task list ထည့်ပါ]
+
+My constraints:
+- Available time: [x hours]
+- Energy level: [low/medium/high]
+- Must-finish items: [list]
+
+Create:
+1. Top 3 priorities
+2. Time-blocked plan
+3. Tasks to defer
+4. One risk I should watch
+5. First 15-minute action
+
+Keep it concise.
+```
+
+## Message Reply Operator
+
+Email/DM reply ရေးဖို့သုံးပါ။ Private data ဖယ်ပြီးမှထည့်ပါ။
+
+```text
+Act as my reply-writing assistant.
+
+Situation:
+[ဘာဖြစ်နေလဲ]
+
+Recipient:
+[friend/client/team/customer]
+
+Tone:
+[friendly/professional/direct]
+
+Draft a reply that:
+- Is clear and respectful
+- Avoids over-explaining
+- Includes the next action
+- Does not promise anything I cannot deliver
+
+Give me 2 versions: short and warm.
+```
+
+## Learning Operator
+
+ဘာသာရပ်ခက်တာတွေကိုနားလည်ဖို့သုံးပါ။
+
+```text
+Act as my Burmese learning coach.
+
+Topic:
+[topic]
+
+My level:
+[beginner/intermediate]
+
+Explain with:
+1. Simple Burmese explanation
+2. English key terms in parentheses
+3. One Myanmar example
+4. 5-question quiz
+5. One practical exercise
+```
+
+## Decision Support Operator
+
+ဆုံးဖြတ်ချက်ကို AI ဆုံးဖြတ်ခိုင်းတာမဟုတ်ဘဲ options စစ်ခိုင်းတာပါ။
+
+```text
+Act as my decision support operator.
+
+Decision:
+[ဆုံးဖြတ်ရမယ့်အရာ]
+
+Options:
+[A, B, C]
+
+Evaluate each option by:
+- Benefits
+- Risks
+- Cost/time
+- Reversibility
+- What information is missing
+
+Do not decide for me. Give me a clear comparison and the safest next step.
+```
+
+<Warning>
+Financial, medical, legal, account access, password, OTP, API key, seed phrase စတဲ့ sensitive info တွေကို AI ထဲမထည့်ပါနဲ့။
+</Warning>

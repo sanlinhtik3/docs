@@ -1,0 +1,45 @@
+---
+title: "Coding with AI"
+description: "Cursor, Claude Code, Windsurf လို AI coding tools တွေကို beginner-friendly workflow နဲ့သုံးနည်း။"
+---
+
+AI coding tool တွေက developer မဟုတ်သေးတဲ့သူကိုပါ project တည်ဆောက်ရာမှာကူညီနိုင်ပါတယ်။ ဒါပေမယ့် code ကို blind trust မလုပ်ရပါ။
+
+## AI coding workflow
+
+1. Goal ကိုရှင်းပါ။
+2. Existing files/context ပေးပါ။
+3. Small change တစ်ခုချင်းစီခိုင်းပါ။
+4. AI ပြင်တာကို diff ကြည့်ပါ။
+5. Test/build run ပါ။
+6. မသိတဲ့ command ကိုမ run ခင်မေးပါ။
+
+## Good prompt
+
+```md
+I am working on a Mintlify docs repo.
+Goal: Add a new Burmese lesson page about wallet safety.
+Please follow existing MDX style.
+Use Burmese + English tech terms mix.
+Add frontmatter, headings, Warning, Steps, and Checklist.
+Do not change unrelated files.
+```
+
+## Code review prompt
+
+```md
+Review this diff for bugs, broken links, MDX syntax issues, and unclear writing.
+Prioritize actionable findings.
+Do not rewrite unless needed.
+```
+
+## Safety rules
+
+- Unknown script ကိုမ run ပါနဲ့။
+- `rm`, `reset`, `clean`, migration command တွေကို နားမလည်ဘဲမ run ပါနဲ့။
+- API key ကို prompt ထဲမထည့်ပါနဲ့။
+- Package install မလုပ်ခင် package name/source စစ်ပါ။
+
+<Tip>
+AI coding tool ကို “အကုန်လုပ်ပေး” လို့ခိုင်းတာထက် “ဒီ page တစ်ခုကို ဒီ structure နဲ့ပြင်” လို့ small task ပေးတာ ပိုကောင်းပါတယ်။
+</Tip>

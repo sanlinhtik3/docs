@@ -1,0 +1,58 @@
+---
+title: "Deposit/Withdraw Test"
+description: "Crypto ပို့မယ်၊ လက်ခံမယ်ဆိုရင် amount ကြီးမပို့ခင် test transaction လုပ်နည်း။"
+---
+
+Crypto transfer မှာ အမှားတစ်ခါလုပ်မိရင် transaction ပြန်ဖျက်လို့မရနိုင်ပါ။ ဒါကြောင့် amount ကြီးမပို့ခင် test transaction လုပ်တာက beginner အတွက် မဖြစ်မနေ habit ဖြစ်သင့်ပါတယ်။
+
+## Test transaction ဆိုတာဘာလဲ
+
+Test transaction ဆိုတာ ပထမဆုံး small amount နဲ့စမ်းပို့တာပါ။ ဥပမာ USDT $1000 ပို့မယ်ဆိုရင် အရင်ဆုံး $1-$5 လောက်ပို့ပြီး recipient ဆီရောက်မရောက်စစ်တာပါ။
+
+## ဘယ်အချိန်မှာ test လုပ်မလဲ
+
+- Wallet address အသစ်ကို ပထမဆုံးပို့တဲ့အခါ
+- Network အသစ်သုံးတဲ့အခါ
+- Exchange အသစ်သုံးတဲ့အခါ
+- Amount ကြီးပို့မယ့်အခါ
+- Recipient ကိုအရင်မပို့ဖူးသေးတဲ့အခါ
+
+## Withdraw လုပ်နည်း pattern
+
+<Steps>
+  <Step title="Recipient address ကိုယူပါ">
+    Recipient က copy ပေးတဲ့ address ကိုပဲသုံးပါ။ Screenshot ထဲက address ကို manually ရိုက်တာမျိုးမလုပ်ပါနဲ့။
+  </Step>
+  <Step title="Network ကို confirm လုပ်ပါ">
+    Recipient က ဘယ် network လက်ခံလဲမေးပါ။ Exchange/wallet နှစ်ဖက်လုံးမှာ network တူရပါမယ်။
+  </Step>
+  <Step title="Small amount ပို့ပါ">
+    Fee အပါအဝင် small amount ကိုပို့ပါ။
+  </Step>
+  <Step title="Recipient ဆီရောက်မရောက်စစ်ပါ">
+    Exchange/wallet ထဲရောက်တာကို confirm လုပ်ပါ။ Blockchain explorer နဲ့လည်းစစ်လို့ရပါတယ်။
+  </Step>
+  <Step title="Main amount ပို့ပါ">
+    Test success ဖြစ်မှ amount ကြီးကိုပို့ပါ။
+  </Step>
+</Steps>
+
+## မမှားအောင် checklist
+
+- Address first 4 characters နဲ့ last 4 characters ကိုစစ်ပါ။
+- Network name ကိုတိတိကျကျစစ်ပါ။
+- Memo/tag လိုအပ်တဲ့ coin တွေမှာ memo/tag မကျန်ခဲ့ပါစေနဲ့။
+- Fee ကိုသိထားပါ။
+- Test transaction success ဖြစ်ပြီးမှ main amount ပို့ပါ။
+
+<Warning>
+Exchange deposit address တွေက တချို့အချိန်မှာပြောင်းနိုင်ပါတယ်။ အဟောင်းကို saved ထားတာနဲ့ blind မပို့ပါနဲ့။
+</Warning>
+
+## Transaction delay ဖြစ်ရင်
+
+ခဏစောင့်ပါ။ Network congestion, exchange confirmation requirement, maintenance စတာတွေကြောင့် delay ဖြစ်တတ်ပါတယ်။ Address/network မှန်တယ်ဆိုရင် transaction hash ကိုသိမ်းထားပြီး support ကိုမေးလို့ရပါတယ်။
+
+<Check>
+နောက်တစ်ဆင့်မှာ [Daily crypto checklist](/crypto-bank/daily-checklist) ကိုဖတ်ပါ။
+</Check>

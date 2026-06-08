@@ -1,0 +1,49 @@
+---
+title: "LLM Basics"
+description: "Large Language Model, token, context window, hallucination, reasoning ဆိုတာတွေကို ရိုးရိုးရှင်းရှင်းနားလည်မယ်။"
+---
+
+LLM ဆိုတာ Large Language Model ပါ။ စာသားအများကြီးကနေ language pattern တွေကိုလေ့လာထားပြီး user မေးတာကို response ပြန်ပေးနိုင်တဲ့ AI model အမျိုးအစားပါ။
+
+## Token ဆိုတာဘာလဲ
+
+Token ဆိုတာ AI model က text ကိုဖတ်တဲ့ unit ပါ။ English မှာ word အပိုင်းအစတွေဖြစ်နိုင်ပြီး Burmese မှာ character/word segmentation ပေါ်မူတည်ပြီးကွာနိုင်ပါတယ်။
+
+Token များလေ cost/time ပိုများနိုင်ပါတယ်။
+
+## Context window ဆိုတာဘာလဲ
+
+Context window ဆိုတာ AI က တစ်ခါတည်းမှတ်ထားနိုင်တဲ့စာပမာဏပါ။ Chat ထဲမှာစာအရမ်းရှည်လာရင် အဟောင်းတွေကိုမေ့သလိုဖြစ်နိုင်ပါတယ်။
+
+## Hallucination ဆိုတာဘာလဲ
+
+AI က မသိတာကို သိသလိုပြောတာမျိုးကို hallucination လို့ခေါ်ပါတယ်။
+
+ဥပမာ:
+
+- မရှိတဲ့ source ကိုရှိသလိုပြောတာ
+- မမှန်တဲ့ crypto fact ကို confidence နဲ့ပြောတာ
+- Code API name မှားရေးတာ
+
+<Warning>
+AI ပြောတာက ချောချောမွေ့မွေ့ဖြစ်နေလို့ မှန်တယ်လို့မယူပါနဲ့။ Important fact တွေကို source နဲ့ပြန်စစ်ပါ။
+</Warning>
+
+## Reasoning ဆိုတာဘာလဲ
+
+Reasoning ဆိုတာ step-by-step စဉ်းစားပြီး problem ဖြေရှင်းနိုင်တဲ့စွမ်းရည်ပါ။ Complex research, coding, planning, debugging တွေမှာ reasoning ကအရေးကြီးပါတယ်။
+
+## AI ကိုပိုကောင်းအောင်သုံးနည်း
+
+Prompt ထဲမှာ:
+
+- Goal ကိုရှင်းရှင်းပြောပါ။
+- Audience ကိုပြောပါ။
+- Context ပေးပါ။
+- Output format သတ်မှတ်ပါ။
+- Constraint တွေပြောပါ။
+- မသေချာရင် မခန့်မှန်းဖို့ပြောပါ။
+
+<Check>
+နောက်တစ်ဆင့်မှာ [Prompting basics](/ai-foundations/prompting-basics) ကိုဖတ်ပါ။
+</Check>

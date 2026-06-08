@@ -1,0 +1,96 @@
+---
+title: "Writing Style Guide"
+description: "ZOE Crypto & AI Burmese Docs အတွက် tone, structure, accuracy, editing rules."
+---
+
+ဒီ page က docs ရေးတဲ့အခါ internal style guide အဖြစ်သုံးဖို့ပါ။ Goal က မင်းရဲ့ friendly Myanmar voice ကိုမပျောက်စေဘဲ course/tutorial docs အဖြစ်သန့်သွားဖို့ပါ။
+
+## Positioning
+
+ဒီ Docs ရဲ့ core positioning:
+
+> Myanmar learners အတွက် Crypto ကို bank လို လုံလုံခြုံခြုံသုံးတတ်ဖို့နဲ့ AI ကို နေ့စဉ်အလုပ်/လေ့လာရေးမှာ တကယ်အသုံးချတတ်ဖို့ step-by-step လမ်းညွှန်တဲ့ friendly practical docs.
+
+## Tone
+
+- Burmese + English tech terms mix သုံးပါ။
+- Friendly ဖြစ်ပါစေ၊ ဒါပေမယ့် misleading hype မဖြစ်ပါစေနဲ့။
+- “ညီကိုတို့” community voice ကို crypto lesson/case study တွေမှာသုံးလို့ရပါတယ်။
+- AI/tutorial docs တွေမှာ “သင်”, “ကိုယ်”, “ကျွန်တော်တို့” ကို context အလိုက်သုံးပါ။
+- Video script rhythm ကို keep လုပ်နိုင်ပေမယ့် docs page မှာ paragraph ကိုတိုအောင်ခွဲပါ။
+
+## Page structure
+
+Page တစ်ခုချင်းစီကို ဒီ skeleton နဲ့စဉ်းစားပါ။
+
+```md
+---
+title: "Clear title"
+description: "Reader က ဒီ page မှာဘာရမလဲ"
+---
+
+Intro: ဘာအတွက်ဖတ်သင့်လဲ
+
+## ဘာလဲ
+
+## ဘာကြောင့်အရေးကြီးလဲ
+
+## ဘယ်လိုလုပ်မလဲ
+
+## သတိထားရန်
+
+## Checklist
+
+## နောက်ဘာဆက်ဖတ်မလဲ
+```
+
+## Mintlify components
+
+- `<Warning>`: seed phrase, scam, leverage, privacy, irreversible transaction
+- `<Tip>`: practical shortcut, best practice
+- `<Info>`: neutral background
+- `<Check>`: verification/success
+- `<Steps>`: step-by-step guide
+- `<Accordion>`: advanced explanation or FAQ
+- `<CardGroup>`: learning path/navigation
+
+## Accuracy rules
+
+Crypto/AI မှာ update မြန်တာကြောင့် absolute claim တွေကိုရှောင်ပါ။
+
+Avoid:
+
+- “ဒီ coin 10x တက်မယ်”
+- “ဒီ strategy က အမြဲအမြတ်ရမယ်”
+- “ဒီ tool က အမြဲ safe ဖြစ်တယ်”
+- “မြန်မာမှာ အခွန်လုံးဝမရှိဘူး” လို legal/tax absolute claim
+
+Prefer:
+
+- “10x တက်နိုင်တဲ့ project တွေကို စစ်တဲ့ framework”
+- “Risk နည်းအောင်သုံးတဲ့နည်း”
+- “လက်ရှိ UI မှာ ဒီလိုတွေ့ရနိုင်ပါတယ်။ Update ဖြစ်နိုင်လို့ app ထဲပြန်စစ်ပါ”
+- “ပညာပေးအတွက်ပါ၊ financial/legal advice မဟုတ်ပါ”
+
+## English terms
+
+English term ကို ပထမဆုံးသုံးတဲ့နေရာမှာ Burmese explanation ထည့်ပါ။
+
+Example:
+
+- Seed phrase ဆိုတာ wallet ကိုပြန်ဖွင့်နိုင်တဲ့ recovery words ပါ။
+- DCA ဆိုတာ Dollar-Cost Averaging, ဈေးတက်တက်ကျကျ ပုံမှန်ဝယ်စုတဲ့နည်းပါ။
+- Hallucination ဆိုတာ AI က မသိတာကို သိသလိုပြောတာပါ။
+
+## Editing checklist
+
+Publish မလုပ်ခင်စစ်ပါ။
+
+- Frontmatter `title` and `description` ပါလား
+- Heading hierarchy သန့်လား
+- Beginner အတွက် jargon ရှင်းထားလား
+- Risk warning ပါလား
+- Hands-on step/checklist ပါလား
+- Internal links မှန်လား
+- Specific coin/tool claim တွေကို source/update caveat ထည့်ထားလား
+- Personal story ပါရင် lesson ကိုရှင်းပြထားလား

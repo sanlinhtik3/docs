@@ -1,0 +1,107 @@
+---
+title: "Research Agent"
+description: "AI ကို research assistant အဖြစ်သုံးပြီး source-backed summary, comparison, risk checklist ထုတ်နည်း။"
+---
+
+Research Agent ရဲ့တာဝန်က “အဖြေထုတ်ပေးတာ” မဟုတ်ပါ။ **Source တွေကိုစစ်၊ evidence ခွဲ၊ uncertainty ပြ၊ decision support ပေးတာ** ပါ။
+
+## TL;DR
+
+- AI research output ကို source မရှိရင် final truth မယူပါနဲ့။
+- Summary ထက် evidence table ပိုတန်ဖိုးရှိပါတယ်။
+- Missing information ကို AI ကဖုံးကွယ်မထားဘဲဖော်ပြရမယ်။
+- Research முடிந்தရင် decision မဟုတ်ဘဲ next questions ပေးရမယ်။
+
+## Research Workflow
+
+<Steps>
+  <Step title="Question">
+    Research question ကိုတိတိကျကျရေးပါ။
+  </Step>
+  <Step title="Sources">
+    Official docs, primary sources, credible reports, original posts ကိုစုပါ။
+  </Step>
+  <Step title="Extract">
+    Key claims, evidence, dates, caveats ကိုခွဲထုတ်ပါ။
+  </Step>
+  <Step title="Compare">
+    Sources အချင်းချင်းတူ/မတူကိုစစ်ပါ။
+  </Step>
+  <Step title="Decide Next">
+    Action မလုပ်ခင် ဘာတွေထပ်စစ်ရမလဲချရေးပါ။
+  </Step>
+</Steps>
+
+## Research Agent Prompt
+
+```text
+Act as my cautious research agent.
+
+Research question:
+[question]
+
+Sources:
+[paste links/notes/text]
+
+Task:
+1. Summarize the answer in 5 bullets.
+2. Create an evidence table:
+   - Claim
+   - Source
+   - Evidence
+   - Confidence
+   - Date sensitivity
+3. List what is missing or uncertain.
+4. List risks if I act on this information.
+5. Give me the next 3 things to verify.
+
+Rules:
+- Do not invent sources.
+- If the source does not say it, mark it as unknown.
+- Separate facts from interpretation.
+- Keep the answer concise.
+```
+
+## Crypto Research Variant
+
+```text
+Act as a crypto DYOR research agent.
+
+Project:
+[project name]
+
+Inputs:
+[whitepaper, website notes, tokenomics, market data]
+
+Analyze:
+1. Problem and use case
+2. Product status
+3. Team
+4. Tokenomics
+5. Market/liquidity risks
+6. Red flags
+7. Questions before buying
+
+Do not give buy/sell advice.
+```
+
+## Content Research Variant
+
+```text
+Research this content topic for a Myanmar audience.
+
+Topic:
+[topic]
+
+Return:
+- Core facts
+- Common misconceptions
+- Local examples
+- 5 content angles
+- Claims that need source checking
+- Safe wording for uncertain claims
+```
+
+<Warning>
+Research agent ကမြန်ပေမယ့် hallucination ဖြစ်နိုင်ပါတယ်။ Important facts, current product details, legal/financial claims တွေကို source နဲ့ပြန်စစ်ပါ။
+</Warning>

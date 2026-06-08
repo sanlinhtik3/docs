@@ -1,0 +1,239 @@
+---
+title: "RunPod GPU + Codex SSH"
+description: "Online GPU ကို RunPod မှာဖွင့်ပြီး Codex/SSH ကနေ model run, API expose, app ထဲ apply လုပ်နည်း။"
+---
+
+ဒီ page က RunPod လို online GPU ကို Codex နဲ့ကိုင်တွယ်ချင်တဲ့သူအတွက် one-page operating guide ပါ။ Goal က **GPU Pod တစ်ခုကို SSH နဲ့ချိတ် → model/API run → local app/docs/project ထဲ apply** လုပ်နိုင်ဖို့ပါ။
+
+## TL;DR
+
+- **Pod** ကိုသုံးပါ: SSH ဝင်ပြီး dev, test, model server run လုပ်ချင်ရင်။
+- **Serverless vLLM** ကိုသုံးပါ: OpenAI-compatible API endpoint လိုချင်ရင်။
+- Codex App SSH remote project အတွက် `~/.ssh/config` alias, `ssh` test, remote host မှာ `codex` command PATH ထဲရှိဖို့လိုပါတယ်။
+- HTTP service expose လုပ်ရင် `https://[POD_ID]-[PORT].proxy.runpod.net` နဲ့သုံးနိုင်ပါတယ်။
+- Public endpoint ဖြစ်သွားတာကြောင့် auth/token မပါဘဲ API မဖွင့်ပါနဲ့။
+
+## မရှိမဖြစ် Requirements
+
+- RunPod account + billing limit သတ်မှတ်ထားခြင်း
+- SSH key: `~/.ssh/id_ed25519` and `~/.ssh/id_ed25519.pub`
+- RunPod account settings ထဲ SSH public key ထည့်ထားခြင်း
+- Official RunPod PyTorch template or custom template with SSH daemon
+- Hugging Face token: gated model သုံးမယ်ဆိုရင်
+- Codex CLI/App: remote host ကို Codex နဲ့ကိုင်မယ်ဆိုရင်
+- Basic Linux commands: `ssh`, `git`, `python`, `curl`, `tmux`
+
+<Warning>
+RunPod Pod, exposed HTTP ports, TCP ports တွေက cost/security risk ရှိပါတယ်။ အလုပ်ပြီးရင် Pod stop/terminate လုပ်ပါ။ API key, HF token, SSH private key, model license token တွေကို docs/prompt/code ထဲမထည့်ပါနဲ့။
+</Warning>
+
+## Architecture
+
+```text
+Local Codex/App
+  -> SSH
+  -> RunPod GPU Pod
+  -> Model server (vLLM/Ollama/FastAPI)
+  -> HTTP proxy or TCP port
+  -> Your app / script / workflow
+```
+
+Serverless path:
+
+```text
+Your app
+  -> RunPod vLLM OpenAI-compatible endpoint
+  -> Hugging Face model on GPU workers
+```
+
+## Step 1: SSH Key ပြင်ပါ
+
+Local machine မှာ key မရှိသေးရင်:
+
+```bash
+ssh-keygen -t ed25519 -C "you@example.com"
+cat ~/.ssh/id_ed25519.pub
+```
+
+RunPod Account Settings ထဲက SSH Public Keys မှာ paste လုပ်ပါ။ Public key က `ssh-ed25519` နဲ့စရပါမယ်။
+
+## Step 2: RunPod Pod ဖွင့်ပါ
+
+Beginner-friendly setup:
+
+- Template: official RunPod PyTorch
+- GPU: model size နဲ့ကိုက်တဲ့ VRAM ရွေးပါ
+- Volume: model/cache သိမ်းချင်ရင် network volume သုံးပါ
+- Expose TCP: `22` for full SSH
+- Expose HTTP: `8000` if API server run မယ်
+
+<Tip>
+Web terminal က quick debug အတွက်ပဲသုံးပါ။ Long-running process, Codex remote control, file/dev work အတွက် SSH ကိုသုံးပါ။
+</Tip>
+
+## Step 3: SSH ဝင်ပါ
+
+RunPod Pod > Connect tab ထဲက SSH command ကို copy လုပ်ပါ။
+
+Basic SSH example:
+
+```bash
+ssh POD_USER@ssh.runpod.io -i ~/.ssh/id_ed25519
+```
+
+Full SSH via public IP example:
+
+```bash
+ssh root@POD_PUBLIC_IP -p POD_SSH_PORT -i ~/.ssh/id_ed25519
+```
+
+Codex remote project အတွက် full SSH/public IP method ကိုပိုသင့်တော်ပါတယ်။ RunPod docs အရ basic SSH proxy က `scp`/`sftp` မထောက်ပံ့ပါ။
+
+## Step 4: SSH Config ထည့်ပါ
+
+Local `~/.ssh/config` ထဲ alias ထည့်ပါ။
+
+```text
+Host runpod-gpu
+  HostName POD_PUBLIC_IP
+  User root
+  Port POD_SSH_PORT
+  IdentityFile ~/.ssh/id_ed25519
+```
+
+Test:
+
+```bash
+ssh runpod-gpu
+```
+
+Codex App က SSH host auto-discover လုပ်နိုင်ဖို့ concrete alias လိုပါတယ်။ Pattern-only host မသုံးပါနဲ့။
+
+## Step 5: Remote Host မှာ Project + Codex ပြင်ပါ
+
+RunPod ထဲ SSH ဝင်ပြီး:
+
+```bash
+apt update
+apt install -y git curl tmux python3-venv
+mkdir -p /workspace/projects
+cd /workspace/projects
+git clone YOUR_REPO_URL
+```
+
+Codex App SSH remote project သုံးမယ်ဆိုရင် remote host မှာ `codex` command PATH ထဲရှိရပါမယ်။
+
+```bash
+which codex
+codex login
+```
+
+မရှိသေးရင် official Codex install/setup method နဲ့ install လုပ်ပါ။ ပြီးရင် local Codex App မှာ **Settings > Connections** ထဲက SSH host ကို add/enable လုပ်ပြီး remote project folder ကိုရွေးပါ။
+
+## Step 6: Model Run လုပ်ပါ
+
+Option A: vLLM server ကို Pod ထဲမှာ run
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -U vllm openai
+python -m vllm.entrypoints.openai.api_server \
+  --host 0.0.0.0 \
+  --port 8000 \
+  --model Qwen/Qwen3-8B
+```
+
+RunPod HTTP proxy:
+
+```text
+https://POD_ID-8000.proxy.runpod.net/v1
+```
+
+Test:
+
+```bash
+curl https://POD_ID-8000.proxy.runpod.net/v1/models
+```
+
+Option B: RunPod Serverless vLLM
+
+- RunPod vLLM worker deploy လုပ်ပါ
+- Endpoint ID သိမ်းပါ
+- RunPod API key ထားပါ
+- Base URL:
+
+```text
+https://api.runpod.ai/v2/ENDPOINT_ID/openai/v1
+```
+
+Python test:
+
+```python
+from openai import OpenAI
+
+client = OpenAI(
+    api_key="RUNPOD_API_KEY",
+    base_url="https://api.runpod.ai/v2/ENDPOINT_ID/openai/v1",
+)
+
+response = client.chat.completions.create(
+    model="Qwen/Qwen3-8B",
+    messages=[{"role": "user", "content": "Say hello in Burmese"}],
+    max_tokens=100,
+)
+
+print(response.choices[0].message.content)
+```
+
+## Step 7: App ထဲ Apply လုပ်ပါ
+
+Local app ရဲ့ `.env`:
+
+```bash
+AI_BASE_URL=https://api.runpod.ai/v2/ENDPOINT_ID/openai/v1
+AI_API_KEY=RUNPOD_API_KEY
+AI_MODEL=Qwen/Qwen3-8B
+```
+
+Code ထဲမှာ OpenAI-compatible client သုံးပါ။ ပြောင်းရမယ့်အဓိက ၃ ခု:
+
+- `base_url`
+- `api_key`
+- `model`
+
+## Codex Prompt
+
+Codex ကို RunPod integration လုပ်ခိုင်းချင်ရင်:
+
+```text
+Add RunPod OpenAI-compatible model support to this app.
+
+Requirements:
+- Read AI_BASE_URL, AI_API_KEY, AI_MODEL from environment variables.
+- Keep existing OpenAI provider working.
+- Do not hardcode secrets.
+- Add a small smoke test or script that sends one chat completion request.
+- Document setup in README.
+- Before editing, inspect existing provider patterns.
+```
+
+## Quality Gate
+
+Before using in production:
+
+- `ssh runpod-gpu` works
+- `nvidia-smi` shows GPU
+- model server responds at `/v1/models`
+- auth/token is enabled before public exposure
+- `.env` is ignored by git
+- Pod stop/terminate plan exists
+- Cost limit/budget alert set
+- Long jobs run inside `tmux`
+
+## Source Notes
+
+- RunPod SSH docs: SSH key, basic SSH proxy, full SSH public IP, TCP 22 requirements
+- RunPod expose ports docs: HTTP proxy URL, public access, timeout/security behavior
+- RunPod vLLM docs: account/API key/HF token requirements, endpoint deploy, OpenAI-compatible API
+- Codex manual: SSH host setup requires `~/.ssh/config`, successful `ssh` test, and remote `codex` command on PATH
