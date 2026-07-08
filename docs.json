@@ -115,6 +115,52 @@
         ]
       },
       {
+        "tab": "Agentic Coding",
+        "groups": [
+          {
+            "group": "Part 1: Foundations",
+            "pages": [
+              "agentic-coding/introduction",
+              "agentic-coding/chapter-1-introduction-to-agentic-coding",
+              "agentic-coding/chapter-2-the-agentic-mindset",
+              "agentic-coding/chapter-3-how-coding-agents-work"
+            ]
+          },
+          {
+            "group": "Part 2: Tooling & Setup",
+            "pages": [
+              "agentic-coding/chapter-4-claude-code-gui",
+              "agentic-coding/chapter-5-codex-remote-gpu",
+              "agentic-coding/chapter-6-agent-safety-permissions"
+            ]
+          },
+          {
+            "group": "Part 3: Instructing & Delegating",
+            "pages": [
+              "agentic-coding/chapter-7-writing-work-contracts",
+              "agentic-coding/chapter-8-plan-act-verify-loop",
+              "agentic-coding/chapter-9-handling-mistakes-debugging"
+            ]
+          },
+          {
+            "group": "Part 4: Quality & Verification",
+            "pages": [
+              "agentic-coding/chapter-10-coding-quality-gates",
+              "agentic-coding/chapter-11-automated-verification-testing"
+            ]
+          },
+          {
+            "group": "Part 5: Example Project",
+            "pages": [
+              "agentic-coding/chapter-12-nextjs-telegram-bot-dashboard-spec",
+              "agentic-coding/chapter-13-project-setup-telegram-bot",
+              "agentic-coding/chapter-14-building-react-dashboard",
+              "agentic-coding/chapter-15-security-audit-deployment"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "Reference",
         "groups": [
           {
@@ -178,7 +224,6 @@
       "claude",
       "perplexity",
       "mcp",
-      "cursor",
       "vscode"
     ]
   },

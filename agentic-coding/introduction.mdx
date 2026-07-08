@@ -1,0 +1,79 @@
+---
+title: "မိတ်ဆက် (Introduction)"
+description: "Agentic Coding"
+---
+
+ဒီစာမျက်နှာကို ရောက်လာပြီဆိုရင်တော့ မင်းဟာ AI နည်းပညာကို ရိုးရိုးတန်းတန်း မေးမြန်းရုံတင်မကဘဲ Software Development လုပ်ငန်းခွင်ထဲမှာ လက်တွေ့အကျဆုံးနဲ့ အစွမ်းထက်ဆုံး ပုံစံမျိုးနဲ့ အသုံးချချင်နေပြီလို့ ကျွန်တော် ယုံကြည်တယ်။ 
+
+ဒီလမ်းညွှန်စာအုပ်က ပုံမှန်တွေ့နေကျ ChatGPT Web Interface ထဲမှာ ကုဒ်တွေမေးပြီး copy-paste လုပ်ပြနေတဲ့ အပေါ်ယံ လမ်းညွှန်ချက်မျိုး မဟုတ်ဘူး။ Terminal ထဲမှာ ဖိုင်တွေ ကိုယ်တိုင်ဆောက်၊ ကုဒ်တွေဝင်ပြင်ပြီး command တွေကို အလိုအလျောက် run ပေးနိုင်တဲ့ **Autonomous Coding Agents** တွေ (ဥပမာ- **Claude** နဲ့ **Codex**) ကို မင်းရဲ့ လက်အောက်ငယ်သား Junior Developer တစ်ဦးလို လိုသလို ညွှန်ကြားမောင်းနှင်နိုင်တဲ့ **AI Operator** တစ်ယောက်ဖြစ်လာဖို့ အနီးကပ် လမ်းပြပေးသွားမယ့် သင်ခန်းစာတွေပဲ ဖြစ်တယ်။
+
+---
+
+## ဒီစာအုပ်က မင်းအတွက် ဘာကြောင့် မရှိမဖြစ် လိုအပ်တာလဲ?
+
+နည်းပညာလောကက နေ့စဉ်နဲ့အမျှ တရဟော တိုးတက်ပြောင်းလဲနေတာ မင်းအသိပဲ။ အရင်က ကုဒ်တစ်ကြောင်းချင်းစီ ခေါင်းစားခံထိုင်ရေးရတဲ့ ခေတ်ကနေ အခုဆိုရင် စိတ်ကူးရှိသလို AI ကို ခိုင်းရုံနဲ့ ရေးပေးနိုင်တဲ့ **Vibe Coding** ခေတ်ကို ရောက်လာပြီ။ ဒါပေမယ့် တကယ်တမ်း စျေးကွက်ထဲမှာ အလုပ်ဖြစ်မယ့် Real-world Applications တွေကို တည်ဆောက်ဖို့ဆိုရင်တော့ စိတ်ကူးယဉ်ရုံ (Vibe) သက်သက်နဲ့ လုံးဝ မလုံလောက်တော့ဘူး။ 
+
+ကိုယ့်ဘက်က စနစ်ကျတဲ့ **Architecture Design Mindset** ၊ အေးဂျင့်တွေကို မကန့်သတ်သင့်တာတွေ မလုပ်မိအောင် ထိန်းကျောင်းတဲ့ **Constraints Guide** နဲ့ ရေးထားတဲ့ကုဒ်တွေ မှန်၊ မမှန် ပြန်လည်စိစစ်တဲ့ **Verification Loops** တွေ မဖြစ်မနေ ရှိထားမှ ရမယ်။ ဒီလမ်းညွှန်ချက်တွေထဲမှာ ဘယ်နေရာမှာမှ အလွယ်တကူ ရှာမရနိုင်တဲ့ အဖိုးတန်လှတဲ့ **Vault Lessons** တွေအကုန်လုံးကို ကျွန်တော်က တစ်ဆင့်ချင်း သေချာ လက်ဆွဲသင်ပေးသွားမယ်။
+
+---
+
+## Agentic Coding Outline (စာအုပ်ရဲ့ ဖွဲ့စည်းတည်ဆောက်ပုံ)
+
+စာအုပ်တစ်အုပ်လုံးကို အဓိက အပိုင်းကြီး ၅ ပိုင်းနဲ့ အစီအစဉ်တကျ ဖွဲ့စည်းထားတယ်:
+
+<CardGroup cols={2}>
+  <Card title="Part 1: Foundations" icon="book-open">
+    Agentic Coding ရဲ့ အခြေခံသဘောတရားတွေ၊ Chatbot နဲ့ ကွာခြားပုံနဲ့ အလုပ်အကိုင် စိုးရိမ်ပူပန်မှုတွေ (Developer Anxiety) ကို ရင်ဆိုင်ကျော်လွှားပုံ။
+  </Card>
+  <Card title="Part 2: Tooling & Setup" icon="wrench">
+    Claude (GUI Apps & Desktop IDEs) နဲ့ Codex (Remote GPU setup via RunPod/SSH) တို့ကို စနစ်တကျနဲ့ ဘေးကင်းလုံခြုံစွာ configure လုပ်ပြီး အသုံးချပုံ။
+  </Card>
+  <Card title="Part 3: Instructing & Delegating" icon="hand-holding-seedling">
+    အေးဂျင့်ကို အလုပ်လွှဲအပ်ခိုင်းစေတဲ့အခါ သုံးရမယ့် Prompting Contracts၊ Plan-Act-Verify Loop နဲ့ ပြဿနာဖြေရှင်းတဲ့ Debugging loops တွေ။
+  </Card>
+  <Card title="Part 4: Quality & Verification" icon="shield-check">
+    ကုဒ်တွေရဲ့ အရည်အသွေးကို စစ်ဆေးတဲ့ Quality Gates နဲ့ အလိုအလျောက် စမ်းသပ်စစ်ဆေးမယ့် Automated Testing ရေးဆွဲပုံ။
+  </Card>
+</CardGroup>
+
+### သင်ခန်းစာများ အလွယ်တကူ ရှာဖွေနိုင်ရန် (Quick Navigation Links)
+
+စာဖတ်သူတွေ အလွယ်တကူ လမ်းကြောင်းရှာနိုင်ဖို့ (Navigate လုပ်နိုင်ဖို့) သက်ဆိုင်ရာ သင်ခန်းစာ အားလုံးကို အောက်ပါအတိုင်း တိုက်ရိုက် Link ချိတ်ဆက် ပေးထားတယ်:
+
+#### Part 1: Foundations (အခြေခံသဘောတရားများ)
+* [Chapter 1: Introduction to Agentic Coding](/agentic-coding/chapter-1-introduction-to-agentic-coding)
+* [Chapter 2: The Agentic Mindset: From Vibe Coder to Operator](/agentic-coding/chapter-2-the-agentic-mindset)
+* [Chapter 3: How Coding Agents Work (Under the Hood)](/agentic-coding/chapter-3-how-coding-agents-work)
+
+#### Part 2: Tooling & Setup (ကိရိယာများနှင့် ပြင်ဆင်ခြင်း)
+* [Chapter 4: Using Claude via GUI Apps & Desktop IDEs](/agentic-coding/chapter-4-claude-code-gui)
+* [Chapter 5: Codex & Remote GPU Coding](/agentic-coding/chapter-5-codex-remote-gpu)
+* [Chapter 6: Agent Safety & Permissions](/agentic-coding/chapter-6-agent-safety-permissions)
+
+#### Part 3: Instructing & Delegating (အေးဂျင့်ကို စနစ်တကျ ခိုင်းစေခြင်း)
+* [Chapter 7: Writing Work Contracts (Master System Prompting)](/agentic-coding/chapter-7-writing-work-contracts)
+* [Chapter 8: The Plan-Act-Verify Loop](/agentic-coding/chapter-8-plan-act-verify-loop)
+* [Chapter 9: Handling Mistakes & Debugging Loops](/agentic-coding/chapter-9-handling-mistakes-debugging)
+
+#### Part 4: Quality & Verification (အရည်အသွေး ထိန်းချုပ်ခြင်း)
+* [Chapter 10: Coding Quality Gates](/agentic-coding/chapter-10-coding-quality-gates)
+* [Chapter 11: Automated Verification and Testing](/agentic-coding/chapter-11-automated-verification-testing)
+
+#### Part 5: Example Project - Full-stack Build from Scratch
+* **Next.js & React + Telegram Bot Webhook** ကို သုံးပြီး analytics dashboard ပါဝင်တဲ့ application တစ်ခုလုံးကို အေးဂျင့်နဲ့အတူ အစကနေ အဆုံးအထိ လက်တွေ့တည်ဆောက်ပြသွားမယ့် အပိုင်း ဖြစ်တယ်:
+  * [Chapter 12: Next.js Telegram Bot with React Dashboard Spec & Architecture](/agentic-coding/chapter-12-nextjs-telegram-bot-dashboard-spec)
+  * [Chapter 13: Project Setup & Telegram Bot Integration](/agentic-coding/chapter-13-project-setup-telegram-bot)
+  * [Chapter 14: Building the React Dashboard](/agentic-coding/chapter-14-building-react-dashboard)
+  * [Chapter 15: Security Audit, Deployment & Post-Launch Checklist](/agentic-coding/chapter-15-security-audit-deployment)
+
+---
+
+## စတင်ဖို့ အကြံပြုချက် (Where to start)
+
+ကုဒ်ရေးနည်း အခြေခံ လုံးဝမရှိသေးရင်တောင် စိတ်ပျက်အားလျှော့စရာ မလိုဘူးနော်။ ဒီထဲမှာပါတဲ့ Architecture နဲ့ Logic ဆိုင်ရာ သဘောတရားတွေကို ရိုးရိုးရှင်းရှင်းနဲ့ မြင်သာအောင် ရှင်းပြပေးသွားမှာမလို့ မင်းဘက်က အဆင့်ဆင့် အာရုံစိုက်ပြီး ဇွဲရှိရှိ ဖတ်ပေးဖို့ပဲ လိုတယ်။
+
+အဆင်သင့်ဖြစ်ပြီဆိုရင် ပထမဆုံးသင်ခန်းစာဖြစ်တဲ့ **[Chapter 1: Introduction to Agentic Coding](/agentic-coding/chapter-1-introduction-to-agentic-coding)** ကနေ စတင်ပြီး လေ့လာလိုက်ကြရအောင်!
+
+<Check>
+ဒီထဲမှာ မျှဝေပေးသွားမယ့် သင်ခန်းစာတွေဟာ လက်တွေ့နယ်ပယ်ထဲမှာ တိုက်ရိုက် အသုံးချလို့ရမယ့် အဖိုးတန် ပညာရပ်တွေပဲ ဖြစ်တယ်။
+</Check>
