@@ -137,25 +137,26 @@
           {
             "group": "Part 3: Instructing & Delegating",
             "pages": [
-              "agentic-coding/chapter-7-writing-work-contracts",
-              "agentic-coding/chapter-8-plan-act-verify-loop",
-              "agentic-coding/chapter-9-handling-mistakes-debugging"
+              "agentic-coding/chapter-7-power-skills-and-commands",
+              "agentic-coding/chapter-8-writing-work-contracts",
+              "agentic-coding/chapter-9-plan-act-verify-loop",
+              "agentic-coding/chapter-10-handling-mistakes-debugging"
             ]
           },
           {
             "group": "Part 4: Quality & Verification",
             "pages": [
-              "agentic-coding/chapter-10-coding-quality-gates",
-              "agentic-coding/chapter-11-automated-verification-testing"
+              "agentic-coding/chapter-11-coding-quality-gates",
+              "agentic-coding/chapter-12-automated-verification-testing"
             ]
           },
           {
             "group": "Part 5: Example Project",
             "pages": [
-              "agentic-coding/chapter-12-nextjs-telegram-bot-dashboard-spec",
-              "agentic-coding/chapter-13-project-setup-telegram-bot",
-              "agentic-coding/chapter-14-building-react-dashboard",
-              "agentic-coding/chapter-15-security-audit-deployment"
+              "agentic-coding/chapter-13-nextjs-telegram-bot-dashboard-spec",
+              "agentic-coding/chapter-14-project-setup-telegram-bot",
+              "agentic-coding/chapter-15-building-react-dashboard",
+              "agentic-coding/chapter-16-security-audit-deployment"
             ]
           }
         ]

@@ -50,11 +50,13 @@ AI Agent တွေရဲ့ အခြေခံ သဘောတရား၊ Chatb
 ### Part 3: Instructing & Delegating (အေးဂျင့်ကို စနစ်တကျ ခိုင်းစေခြင်း)
 ထိရောက်တဲ့ Prompting နည်းဗျူဟာများ၊ Work Contracts များနဲ့ Debugging loops များ။
 
-* **[Chapter 7: Writing Work Contracts (Master System Prompting)](./chapter-7-writing-work-contracts.mdx)** _(Coming Soon)_
+* **[Chapter 7: Power Skills & Slash Commands (/grill-me & ponytail)](./chapter-7-power-skills-and-commands.mdx)**
+  * အေးဂျင့်ကို ညွှန်ကြားရာမှာ အစွမ်းထက်ဆုံးဖြစ်တဲ့ `/grill-me` (Architecture Interviewer) နဲ့ `ponytail` (Lazy Senior Dev Mode) တို့ကို အသေးစိတ် အသုံးချပုံ။
+* **[Chapter 8: Writing Work Contracts (Master System Prompting)](./chapter-8-writing-work-contracts.mdx)** _(Coming Soon)_
   * Agent ကို one-off prompt တွေ ပေးမယ့်အစား လုပ်ငန်းသဘောတူစာချုပ် (Work Contract) ပုံစံ Prompt ရေးနည်း။ `Goal`, `Context`, `Constraints`, `Operating mode` နဲ့ `Output format` တို့ကို ခွဲခြားရေးသားပုံ။
-* **[Chapter 8: The Plan-Act-Verify Loop (လုပ်ငန်းစဉ် ပတ်လမ်း)](./chapter-8-plan-act-verify-loop.mdx)** _(Coming Soon)_
+* **[Chapter 9: The Plan-Act-Verify Loop (လုပ်ငန်းစဉ် ပတ်လမ်း)](./chapter-9-plan-act-verify-loop.mdx)** _(Coming Soon)_
   * Agent နဲ့အတူ အလုပ်လုပ်တဲ့အခါ အောင်မြင်မှုရစေမယ့် အဆင့် ၃ ဆင့် Loop (Plan ရေးခိုင်းခြင်း၊ Act ကုဒ်ပြင်ခြင်း၊ Verify စမ်းသပ်စစ်ဆေးခြင်း)။
-* **[Chapter 9: Handling Mistakes & Debugging Loops](./chapter-9-handling-mistakes-debugging.mdx)** _(Coming Soon)_
+* **[Chapter 10: Handling Mistakes & Debugging Loops](./chapter-10-handling-mistakes-debugging.mdx)** _(Coming Soon)_
   * Agent က လမ်းမှားသွားတဲ့အခါ၊ ဒါမှမဟုတ် bug တွေ ထပ်ခါထပ်ခါ တက်နေတဲ့အခါ Infinite loop ကို ဖြတ်တောက်ပြီး အမှားအယွင်း logs တွေကို စနစ်တကျ ဖတ်ပြ လမ်းညွှန်ပုံ။
 
 ---
@@ -62,9 +64,9 @@ AI Agent တွေရဲ့ အခြေခံ သဘောတရား၊ Chatb
 ### Part 4: Quality & Verification (အရည်အသွေး ထိန်းချုပ်ခြင်း)
 ကုဒ်အရည်အသွေး စံနှုန်းများနဲ့ အလိုအလျောက် စမ်းသပ်စစ်ဆေးခြင်း (Automated Testing)။
 
-* **[Chapter 10: Coding Quality Gates (အရည်အသွေး တံခါးတွေ)](./chapter-10-coding-quality-gates.mdx)** _(Coming Soon)_
+* **[Chapter 11: Coding Quality Gates (အရည်အသွေး တံခါးတွေ)](./chapter-11-coding-quality-gates.mdx)** _(Coming Soon)_
   * Code မရေးခင်နဲ့ ရေးပြီးနောက် မဖြစ်မနေ ဖြတ်သန်းရမယ့် Quality Gates တွေ။ Code linting၊ type checking နဲ့ formatting standard တွေကို AI နဲ့ ဖြေရှင်းခိုင်းပုံ။
-* **[Chapter 11: Automated Verification and Testing](./chapter-11-automated-verification-testing.mdx)** _(Coming Soon)_
+* **[Chapter 12: Automated Verification and Testing](./chapter-12-automated-verification-testing.mdx)** _(Coming Soon)_
   * Unit tests တွေ ရေးပြီး အလုပ်ကို အလိုအလျောက် verify လုပ်ပုံ။ Python/JS testing frameworks တွေ သုံးပြီး test spec ရေးဆွဲတာနဲ့ Agent ကို test pass ဖြစ်တဲ့အထိ ပြင်ဆင်ခိုင်းပုံ။
 
 ---
@@ -72,13 +74,13 @@ AI Agent တွေရဲ့ အခြေခံ သဘောတရား၊ Chatb
 ### Part 5: Example Project - Build from Scratch (လက်တွေ့ App တစ်ခု ဆောက်လုပ်ခြင်း)
 **Next.js & React + Telegram Bot Webhook** ကို သုံးပြီး analytics dashboard ပါဝင်တဲ့ application တစ်ခုလုံးကို အေးဂျင့်နဲ့အတူ အစကနေ အဆုံးအထိ လက်တွေ့တည်ဆောက်မယ့် အပိုင်း။
 
-* **[Chapter 12: Next.js Telegram Bot with React Dashboard Spec & Architecture](./chapter-12-nextjs-telegram-bot-dashboard-spec.mdx)** _(Coming Soon)_
+* **[Chapter 13: Next.js Telegram Bot with React Dashboard Spec & Architecture](./chapter-13-nextjs-telegram-bot-dashboard-spec.mdx)** _(Coming Soon)_
   * Telegram Bot နဲ့ web-based admin dashboard ပါဝင်မယ့် Full-stack app တစ်ခုကို design ဆွဲတာ။ Telegram Bot API architecture (Webhooks vs Polling)၊ Next.js Route Handlers နဲ့ dashboard layout spec။
-* **[Chapter 13: Project Setup & Telegram Bot Integration](./chapter-13-project-setup-telegram-bot.mdx)** _(Coming Soon)_
+* **[Chapter 14: Project Setup & Telegram Bot Integration](./chapter-14-project-setup-telegram-bot.mdx)** _(Coming Soon)_
   * Next.js application အသစ်တစ်ခု စတင်ပြီး Telegram webhook routing နဲ့ core logic တွေကို Agent နဲ့ တည်ဆောက်တာ။ Environment variables setup နဲ့ message processing logic။
-* **[Chapter 14: Building the React Dashboard](./chapter-14-building-react-dashboard.mdx)** _(Coming Soon)_
+* **[Chapter 15: Building the React Dashboard](./chapter-15-building-react-dashboard.mdx)** _(Coming Soon)_
   * Next.js App Router နဲ့ React Server Components/Client Components ကို သုံးပြီး bot analytics နဲ့ interaction history ပြသမယ့် user interface တစ်ခု ဆောက်လုပ်တာ။
-* **[Chapter 15: Security Audit, Deployment & Post-Launch Checklist](./chapter-15-security-audit-deployment.mdx)** _(Coming Soon)_
+* **[Chapter 16: Security Audit, Deployment & Post-Launch Checklist](./chapter-16-security-audit-deployment.mdx)** _(Coming Soon)_
   * Production deploy မလုပ်ခင် app ရဲ့ security စစ်ဆေးတာ၊ Vercel deployment လုပ်တာနဲ့ Agent production ready checklist။
 
 ---
